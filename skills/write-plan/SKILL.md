@@ -29,7 +29,7 @@ Write a markdown document with these sections. Omit a section entirely if it's g
 
 - **Title** + one-line summary, referencing the source PRD by path
 - **Context** — carried from the PRD, not re-derived; if the project was empty, include the **Stack** choices gathered during planning (language/runtime, frameworks, package manager, test runner, workflow/TDD preference) so they aren't re-asked next time
-- **Milestones** — ordered phases of work; each one states what it delivers, the specific files/modules it touches (real paths found during exploration, not placeholders), what existing code it reuses, its dependency on earlier milestones, and how to verify it before moving to the next one. When incremental TDD was chosen, a milestone's files are built up function-by-function (or behavior-by-behavior): write a failing test for the next small piece, implement just enough to pass, refactor, repeat — not one test for the whole milestone followed by one big implementation pass.
+- **Milestones** — ordered phases of work, each heading formatted as `### N. [ ] Title` (an unchecked box — `/build-plan` flips it to `[x]` once that milestone is actually built and verified, so progress survives across sessions). Each one states what it delivers, the specific files/modules it touches (real paths found during exploration, not placeholders), what existing code it reuses, its dependency on earlier milestones, and how to verify it before moving to the next one. When incremental TDD was chosen, a milestone's files are built up function-by-function (or behavior-by-behavior): write a failing test for the next small piece, implement just enough to pass, refactor, repeat — not one test for the whole milestone followed by one big implementation pass.
 - **Open questions carried forward** — anything the PRD flagged as unresolved that actually blocks a milestone, raised here rather than guessed at
 - **Out of scope** — Non-goals from the PRD, restated so they aren't accidentally picked back up mid-build
 
@@ -37,7 +37,7 @@ Write in British English (spelling and conventions) throughout.
 
 ## Output
 
-Write the file. Show the user the path and a short summary of the milestones, and ask whether anything needs adjusting before starting on the first one.
+Write the file. Show the user the path and a short summary of the milestones, and ask whether anything needs adjusting before starting on the first one (`/build-plan` can take it from here).
 
 ## Don't
 

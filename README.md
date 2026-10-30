@@ -34,6 +34,7 @@ Supporting files (references, scripts, templates) can sit alongside `SKILL.md` a
 | [grill-me](skills/grill-me/SKILL.md) | Relentlessly interviews you about a plan or design, one question at a time, until every decision is resolved. | `/grill-me I want to migrate our course pages from Drupal to a headless CMS` |
 | [write-prd](skills/write-prd/SKILL.md) | Turns a resolved discussion — typically a grill-me session — into a written spec/PRD saved to the project. | `/write-prd` (after a grill-me session, or standalone: `/write-prd the Drupal migration we just discussed`) |
 | [write-plan](skills/write-plan/SKILL.md) | Turns a written spec/PRD into a concrete, file-level implementation plan with ordered milestones. | `/write-plan` (after a write-prd document is saved, or standalone: `/write-plan specs/drupal-migration.md`) |
+| [build-plan](skills/build-plan/SKILL.md) | Builds one milestone (or a requested range) from a write-plan document, verifies it for real, and stops for review. | `/build-plan` (after a write-plan document is approved, or standalone: `/build-plan milestone 2 of specs/drupal-migration-plan.md`) |
 
 ## Plugins
 
