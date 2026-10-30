@@ -15,6 +15,7 @@ Interview the user relentlessly about their plan, design, idea or decision until
 - **Look before you ask.** If a question can be answered from the codebase, docs or files available to you, go and find out instead of asking.
 - **Push on weak spots.** Challenge vague answers, unstated assumptions, contradictions with earlier answers, unhandled edge cases, failure modes, scope creep and "we'll figure it out later".
 - **Be direct, not hostile.** Persistent and probing, never sneering. If the user explicitly declares something out of scope or deferred, accept it and record it as such.
+- **Write in British English** (spelling and conventions) throughout.
 
 ## Keep track
 

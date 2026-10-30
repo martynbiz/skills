@@ -32,6 +32,8 @@ Supporting files (references, scripts, templates) can sit alongside `SKILL.md` a
 | Skill | Description | Example |
 |-------|-------------|---------|
 | [grill-me](skills/grill-me/SKILL.md) | Relentlessly interviews you about a plan or design, one question at a time, until every decision is resolved. | `/grill-me I want to migrate our course pages from Drupal to a headless CMS` |
+| [write-prd](skills/write-prd/SKILL.md) | Turns a resolved discussion — typically a grill-me session — into a written spec/PRD saved to the project. | `/write-prd` (after a grill-me session, or standalone: `/write-prd the Drupal migration we just discussed`) |
+| [write-plan](skills/write-plan/SKILL.md) | Turns a written spec/PRD into a concrete, file-level implementation plan with ordered milestones. | `/write-plan` (after a write-prd document is saved, or standalone: `/write-plan specs/drupal-migration.md`) |
 
 ## Plugins
 
@@ -50,7 +52,18 @@ Supporting files (references, scripts, templates) can sit alongside `SKILL.md` a
 ./install.sh -u [names...]  # uninstall (removes only symlinks pointing at this repo)
 ```
 
-It's safe to re-run, and it won't overwrite a skill folder you've installed some other way. Set `CLAUDE_DIR` to install somewhere other than `~/.claude`. Run `/reload-skills` (or start a new session) afterwards.
+On **Windows**, use the PowerShell equivalent, which creates directory junctions instead (no admin rights or Developer Mode needed):
+
+```powershell
+.\install.ps1                  # install all skills
+.\install.ps1 grill-me         # install specific skills
+.\install.ps1 -l               # list skills and install status
+.\install.ps1 -u [names...]    # uninstall
+```
+
+If the execution policy blocks it, run `powershell -ExecutionPolicy Bypass -File .\install.ps1`. (Avoid `install.sh` under Git Bash — its `ln -s` copies folders rather than linking them by default.)
+
+Both scripts are safe to re-run, and won't overwrite a skill folder you've installed some other way. Set `CLAUDE_DIR` to install somewhere other than `~/.claude`. Run `/reload-skills` (or start a new session) afterwards.
 
 **A plugin** — add this repo as a marketplace, then install from it inside Claude Code:
 
