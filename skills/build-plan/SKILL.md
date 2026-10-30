@@ -26,7 +26,11 @@ Turn an approved implementation plan (`write-plan`) into actual code, one milest
 - Once verification genuinely passes, flip that milestone's checkbox to `[x]` in the plan file, then summarize what was built and how it was verified.
 - Stop there. Don't continue to the next milestone unless the user explicitly asked for more than one this run.
 - Don't commit automatically — git commits require the user's explicit go-ahead each time, per standing policy. Summarize the diff and suggest reviewing/committing it; only commit if the user says so this run.
-- At a natural checkpoint (end of a milestone, or the whole plan), mention `/code-review` or `/security-review` as options rather than running them unasked.
+- At the end of a milestone, decide what's actually worth recommending rather than generically listing both options every time:
+  - Recommend `/security-review` when this milestone touched authentication/access control, secrets or credential handling, or untrusted external input (e.g. a webhook/API endpoint, anything parsing freeform input into an action) — say briefly why, not just that it exists. Reviewing before committing means any fixes land in the same commit rather than a follow-up one.
+  - Recommend `/code-review` when this milestone introduced non-trivial logic or branching worth a second look.
+  - For a milestone that's pure scaffolding/config with no real logic (already fully covered by its passing tests), say neither is needed rather than suggesting them out of habit.
+  - Never run either unasked — recommend, then wait.
 
 Write in British English (spelling and conventions) throughout.
 
